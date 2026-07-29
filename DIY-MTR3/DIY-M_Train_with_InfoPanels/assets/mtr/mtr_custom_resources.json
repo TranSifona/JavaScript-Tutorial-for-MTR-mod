@@ -1,0 +1,13 @@
+{
+	"custom_trains": {
+		"tsfn_m_train": {
+			"name": "M-Train (Normal) with InfoPanels",
+			"color": "00C000",
+			"base_train_type": "m_train",
+			"script_files": [
+				"mtr:js/main.js"
+			],
+			"rider_offset": 0.0
+		}
+	}
+}
