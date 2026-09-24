@@ -1,4 +1,12 @@
-# JavaScript-Tutorial-for-MTR-mod
-A few projects that guide you on exploring JavaScript coding for Minecraft Transit Railway mod
+# MTR mod scripting tutorial - by TranSifona
 
-You can find the release on https://modrinth.com/resourcepack/mtr-mod-m-train-with-infopanels
+A guide on exploring JavaScript coding for Minecraft Transit Railway mod.
+
+**[Go to home page](https://github.com/TranSifona/JavaScript-Tutorial-for-MTR-mod/wiki)**
+
+## Credits
+
+- [Jonathan Ho](https://github.com/jonafanho), author of MTR mod
+- [BX Zhang](https://github.com/zbx1425), author of NTE mod
+- [AmberFrost](https://github.com/AmberIsFrozen), author of JCM mod
+- [D3-E500](https://space.bilibili.com/1233173441) and [shopvb](https://space.bilibili.com/296834192), who provided some vehicle models for demo
