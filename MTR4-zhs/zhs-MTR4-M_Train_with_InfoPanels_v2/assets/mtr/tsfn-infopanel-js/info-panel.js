@@ -1,4 +1,4 @@
-// MTR模组M-Train资趣台v2
+// MTR模组M-Train资趣台v2.2
 // 2026年-当前 仙芳佳全域通达铁路、乐文彩雨 版权所有
 // 作者b站：https://space.bilibili.com/104383166
 // 使用时请遵守MIT开源协议
@@ -20,18 +20,10 @@ function DrawInfoPanel(g, state, routePlats, nextStopIndex, hasArrived, time, is
   let next = "";
   let nextZh = "";
   let nextEn = "";
-  let next2 = "";
-  let next2Zh = "";
-  let next2En = "";
   if (routePlats[nextStopIndex] != undefined) {
     next = routePlats[nextStopIndex].station.name;
     nextZh = TextUtil.getCjkParts(next);
     nextEn = TextUtil.getNonCjkParts(next);
-    if (routePlats[nextStopIndex + 1] != undefined) {
-      next2 = routePlats[nextStopIndex + 1].station.name;
-      next2Zh = hasArrived ? TextUtil.getCjkParts(next2) : "";
-      next2En = hasArrived ? TextUtil.getNonCjkParts(next2) : "";
-    }
   }
 
   // 检测下一站是否为车厂，用于避免一些错误

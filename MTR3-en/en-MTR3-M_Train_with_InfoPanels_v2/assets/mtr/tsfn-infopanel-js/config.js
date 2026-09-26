@@ -1,4 +1,4 @@
-// [MTR mod] M-Train with InfoPanels 資趣台 v2
+// [MTR mod] M-Train with InfoPanels 資趣台 v2.2
 // Copyright 2026-present TranSifona & Lewen Choiee
 // Our YouTube channel: https://www.youtube.com/@transifona
 // Use these code in alignment with MIT License | 使用此程式碼時請遵從MIT授權條款

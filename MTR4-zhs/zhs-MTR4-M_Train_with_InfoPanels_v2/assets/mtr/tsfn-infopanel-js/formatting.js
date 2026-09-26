@@ -1,4 +1,4 @@
-// MTR模组M-Train资趣台v2
+// MTR模组M-Train资趣台v2.2
 // 2026年-当前 仙芳佳全域通达铁路、乐文彩雨 版权所有
 // 作者b站：https://space.bilibili.com/104383166
 // 使用时请遵守MIT开源协议

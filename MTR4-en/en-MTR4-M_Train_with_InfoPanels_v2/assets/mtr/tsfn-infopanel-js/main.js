@@ -1,4 +1,4 @@
-// [MTR mod] M-Train with InfoPanels 資趣台 v2
+// [MTR mod] M-Train with InfoPanels 資趣台 v2.2
 // Copyright 2026-present TranSifona & Lewen Choiee
 // Our YouTube channel: https://www.youtube.com/@transifona
 // Use these code in alignment with MIT License | 使用此程式碼時請遵從MIT授權條款
@@ -78,16 +78,9 @@ function render(ctx, state, train) {
 
     /* [CODE FOR ROUTE INFO | 路綫資料關聯程式碼] */
     let routePlats = train.getThisRoutePlatforms();
-    let terminus = "";
-    let routeName = "";
-    let routeColor = Color(0, 0, 0, 0);
     let nextStopIndex = 0;
     let distancePassed = 0;
-    if (routePlats != undefined && routePlats[routePlats.size() - 1] != undefined) {
-      terminus = routePlats[routePlats.size() - 1].station.name;
-      routeName = routePlats[routePlats.size() - 1].route.name;
-      routeColor = Color(routePlats[routePlats.size() - 1].route.color);
-    }
+
     if (train.getThisRoutePlatformsNextIndex() != undefined)
       nextStopIndex = train.getThisRoutePlatformsNextIndex();
     if (train.railProgress() != undefined)
@@ -106,11 +99,19 @@ function render(ctx, state, train) {
 
     // Get game time | 讀取游戲時間
     let timeMC = MinecraftClient.worldDayTime();
-    let timeH = timeMC / 1000 + 6;
+    let timeH = timeMC / 1000;
     let timeM = timeH % 1;
     timeM = Math.trunc((timeM * 1000) / (50 / 3));
+
+    if (timeH >= 0 && timeH < 18)
+      timeH += 6;
+    else if (timeH >= 18 && timeH < 24)
+      timeH -= 18;
+    else
+      timeH = 0;
+
     timeH = Math.trunc(timeH);
-    let time = (timeH < 13 ? timeH : timeH - 12) + ":" + (timeM < 10 ? "0" : "") + timeM + (timeH < 12 || timeH == 24 ? " am" : " pm");
+    let time = (timeH == 0 ? 12 : timeH < 13 ? timeH : timeH - 12) + ":" + (timeM < 10 ? "0" : "") + timeM + (timeH < 12 ? " am" : " pm");
 
     // Get game weather | 讀取游戲天氣
     let isRaining = MinecraftClient.worldIsRaining();

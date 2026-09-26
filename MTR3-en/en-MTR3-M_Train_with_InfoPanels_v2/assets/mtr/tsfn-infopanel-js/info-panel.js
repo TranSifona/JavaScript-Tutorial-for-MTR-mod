@@ -1,4 +1,4 @@
-// [MTR mod] M-Train with InfoPanels 資趣台 v2
+// [MTR mod] M-Train with InfoPanels 資趣台 v2.2
 // Copyright 2026-present TranSifona & Lewen Choiee
 // Our YouTube channel: https://www.youtube.com/@transifona
 // Use these code in alignment with MIT License | 使用此程式碼時請遵從MIT授權條款
@@ -20,18 +20,10 @@ function DrawInfoPanel(g, state, routePlats, nextStopIndex, hasArrived, time, is
   let next = "";
   let nextZh = "";
   let nextEn = "";
-  let next2 = "";
-  let next2Zh = "";
-  let next2En = "";
   if (routePlats[nextStopIndex] != undefined) {
     next = routePlats[nextStopIndex].station.name;
     nextZh = TextUtil.getCjkParts(next);
     nextEn = TextUtil.getNonCjkParts(next);
-    if (routePlats[nextStopIndex + 1] != undefined) {
-      next2 = routePlats[nextStopIndex + 1].station.name;
-      next2Zh = hasArrived ? TextUtil.getCjkParts(next2) : "";
-      next2En = hasArrived ? TextUtil.getNonCjkParts(next2) : "";
-    }
   }
 
   // Check whether the next stop is depot, to avoid some errors | 檢查下一站是否為車廠，可避免一些錯誤
