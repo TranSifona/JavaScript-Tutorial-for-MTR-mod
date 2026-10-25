@@ -78,16 +78,39 @@ function dispose(ctx, state, train) {
   state.infoPanel.close();
 }
 
+// Colours | 顏色
+const WHITE = Color(240 / 255, 240 / 255, 240 / 255),
+  CYAN = Color.decode("#0faa9b"),
+  YELLOW = Color(255 / 255, 200 / 255, 10 / 255);
+
+// Images | 圖片
+// Important: custom path must be in lower-case letters!
+// 重要：自訂路徑必須為小寫字母！
+//const IMAGE_1 = Resources.readBufferedImage(Resources.idRelative("path to image | 圖片檔案路徑"));
+
 // Fonts | 字體
 const SERIF = Resources.getSystemFont("Noto Serif"),
   SANS = Resources.getSystemFont("Noto Sans");
+// Important: custom path must be in lower-case letters!
+// 重要：自訂路徑必須為小寫字母！
+//const CUSTOM_FONT_1 = Resources.readFont(Resources.idr("path to font | 字體檔案路徑"));
 
 // This function draws the screen content | 此函數將會繪製螢幕內容
 function DrawInfoPanel(g) {
-  g.setColor(Color(240 / 255, 240 / 255, 240 / 255));
+  g.setColor(WHITE);
   g.fillRect(0, 0, 2000, 400);
 
-  g.setColor(Color(15 / 255, 170 / 255, 155 / 255));
+  g.setColor(YELLOW);
+  g.fillRect(100, 175, 300, 100);
+
+  let stroke1 = new BasicStroke(5);
+  g.setStroke(stroke1);
+  g.drawOval(500, 175, 300, 100);
+  g.drawPolygon([900, 1200, 950], [175, 225, 275], 3);
+
+  //g.drawImage(IMAGE_1, 1300, 175, 300, 100, null);
+
+  g.setColor(CYAN);
   g.setFont(SANS.deriveFont(0, 150));
   AlignText(g, "You're using the DIY version. Edit .js files to modify content", 1000, 150, 2000, "center");
   AlignText(g, "閣下使用的是DIY版本，如需加入內容請自行修改.js檔案", 1000, 350, 2000, "center");
